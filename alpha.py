@@ -63,12 +63,12 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('sachin.l0har0424@gmail.com', 'sachinl0har@24')
-    server.sendmail('sachin.l0har0424@gmail.com', to, content)
+    server.login('your email', 'password')
+    server.sendmail('email to whom send the message', to, content)
     server.close()
 # NEWS
 def news():
-    main_url = 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=be2cf57c12554c22be4532990afefb3f'
+    main_url = 'url + api'
 
     main_page = requests.get(main_url).json()
 
@@ -165,7 +165,7 @@ def run_alpha():
 # SEND WHATSAPP MESSAGE
         elif 'send message' in query:
             speak('Okay! Sending Message...')
-            pywhatkit.sendwhatmsg('+917756860180', 'Hii Swaroop,ALPHA here! Testing pywhatkit...!', 13,50)
+            pywhatkit.sendwhatmsg('number', 'message here', time here)
 # PLAY MUSIC FROM YOUTUBE
         elif 'play' in query:
             song = query.replace('play', '')
