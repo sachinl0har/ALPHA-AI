@@ -61,8 +61,8 @@ wishMe()
 def run_alpha():
         inpu = takeCommand()
         print(inpu)
-        url = "https://api.affiliateplus.xyz/api/chatbot?message={}&botname=Acro&ownername=sachinlohar".format(inpu)
-        response = requests.get(url).json()['message']
+        url = "http://api.brainshop.ai/get?bid=157984&key=3S0hhLXZ5GS2KYs4&uid=[uid]&msg=[{}]".format(inpu)
+        response = requests.get(url).json()['cnt']
         print(response)
         speak(response)
 
