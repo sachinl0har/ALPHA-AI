@@ -37,7 +37,7 @@ def wishMe():
     else:
         speak("Good Evening Sir!")
 
-    speak("ALPHA Here,How may i help you?")
+    speak("Acro Here,How may i help you?")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -92,9 +92,8 @@ def pdf_reader():
     page = pdfReader.getPage(pg)
     text = page.extractText()
     speak(text)
-
+wishMe()
 def run_alpha():
-        wishMe()
         query = takeCommand()
         print(query)
 # WIKIPEDIA
@@ -182,19 +181,19 @@ def run_alpha():
             elif 'not' in ans_take_from_user_how_are_you or 'sad' in ans_take_from_user_how_are_you or 'upset' in ans_take_from_user_how_are_you:
                 speak('oh sorry..')  
         elif 'make you' in query or 'created you' in query or 'develop you' in query:
-            ans_m = " For your information Sachin Lohar AKA ALPHA Created me ! I give Lot of Thannks to Him "
+            ans_m = " For your information Sachin Lohar Created me ! I give Lot of Thannks to Him "
             print(ans_m)
             speak(ans_m)
         elif "who are you" in query or "about you" in query or "your details" in query:
-            about = "I am ALPHA an A I based computer program but i can help you lot like a your close friend ! i promise you ! Simple try me to give simple command ! like playing music or video from your directory i also play video and song from web or online ! i can also entain you i so think you Understand me ! ok Lets Start "
+            about = "I am Acro an A I based computer program but i can help you lot like a your close friend ! i promise you ! Simple try me to give simple command ! like playing music or video from your directory i also play video and song from web or online ! i can also entain you i so think you Understand me ! ok Lets Start "
             print(about)
             speak(about)
-        elif "hello" in query or "hello ALPHA" in query:
+        elif "hello" in query or "hello Acro" in query:
             hel = "Hello Sir ! How May i Help you.."
             print(hel)
             speak(hel)
         elif "your name" in query or "sweat name" in query:
-            na_me = "Thanks for Asking my name my self ! ALPHA"  
+            na_me = "Thanks for Asking my name my self ! Acro"  
             print(na_me)
             speak(na_me)
         elif "you feeling" in query:
@@ -257,6 +256,12 @@ def run_alpha():
 # PDF READER
         elif "read pdf" in query:
             pdf_reader()
+            
+        else:
+            url = "http://api.brainshop.ai/get?bid=157984&key=3S0hhLXZ5GS2KYs4&uid=[uid]&msg=[{}]".format(query)
+            response = requests.get(url).json()['cnt']
+            print(response)
+            speak(response)
 
 while True:
     run_alpha()
