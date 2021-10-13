@@ -167,7 +167,7 @@ def run_alpha():
 # SEND WHATSAPP MESSAGE
         elif 'send message' in query:
             speak('Okay! Sending Message...')
-            pywhatkit.sendwhatmsg('number', 'message here', time here)
+            pywhatkit.sendwhatmsg('number', 'message here', "time here")
 # PLAY MUSIC FROM YOUTUBE
         elif 'play' in query:
             song = query.replace('play', '')
