@@ -5,6 +5,8 @@ import requests
 import speech_recognition as sr
 from requests import get
 
+import gui
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -20,6 +22,7 @@ engine.setProperty('voice', voices[1].id)
 
 
 def speak(audio):
+    gui.speak(audio)
     engine.say(audio)
     engine.runAndWait()
 # WISH ME
@@ -66,5 +69,5 @@ def run_alpha():
         print(response)
         speak(response)
 
-while True:
-    run_alpha()
+gui.set_speak_command(run_alpha)
+gui.mainloop()
