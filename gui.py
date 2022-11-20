@@ -15,7 +15,7 @@ speak_button.pack(side=tk.LEFT, anchor=tk.SW)
 
 
 def speak(text):
-    chat_listbox.insert('end', f'Assistant: {text}')
+    chat_listbox.insert('end', f'Acro: {text}')
 
 
 scroll_bar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -25,6 +25,6 @@ chat_listbox.configure(yscrollcommand=scroll_bar.set)
 main_frame.pack(fill=tk.BOTH)
 root.geometry('700x500')
 root.minsize(700, 500)
-root.wm_title('Desktop assistant')
+root.wm_title('ALPHA AI')
 root.resizable(False, True)
 mainloop = root.mainloop
